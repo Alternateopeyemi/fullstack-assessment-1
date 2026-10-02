@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create an account to get started on your learning journey.">
+  <title>Sign Up To AltSchool Africa</title>
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+  <header>
+    <!-- Global navigation: must be at the top of BOTH pages -->
+    <nav aria-label="Global navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="form.html" aria-current="page">Sign up form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Sign up / Sign in tabs -->
+    <nav aria-label="Account options">
+      <a href="#signup" aria-current="true">Sign up</a>&nbsp;|&nbsp;
+      <a href="#signin">Sign in</a>
+    </nav>
+
+    <!-- SIGN UP FORM -->
+    <section id="signup" aria-labelledby="signup-heading">
+      <h1 id="signup-heading">Sign up</h1>
+      <p>Create an account to get started on your learning journey</p>
+
+      <p role="note"><strong>&#9888; Important: Your name will appear on your certificate exactly as entered</strong></p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="signup-email">Email</label><br>
+          <input type="email" id="signup-email" name="email" placeholder="john.doe@example.com" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="first-name">First name</label><br>
+          <input type="text" id="first-name" name="firstName" placeholder="John" autocomplete="given-name" required>
+        </p>
+
+        <p>
+          <label for="last-name">Last name</label><br>
+          <input type="text" id="last-name" name="lastName" placeholder="Doe" autocomplete="family-name" required>
+        </p>
+
+        <p>
+          <label for="phone">Phone number</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="+1234567890" autocomplete="tel" required>
+        </p>
+
+        <p>
+          <label for="signup-password">Password</label><br>
+          <input type="password" id="signup-password" name="password" placeholder="********" autocomplete="new-password" minlength="8" required>
+          <button type="button" id="toggle-signup-password" aria-controls="signup-password" aria-label="Show password">&#128065;</button>
+        </p>
+
+        <p>
+          By clicking Create account, I agree to
+          <a href="#terms">Terms of Use</a>
+          and acknowledge that I have read the
+          <a href="#privacy">Privacy Policy</a>.
+        </p>
+
+        <p><button type="submit">Create account &rarr;</button></p>
+
+        <p>OR</p>
+
+        <p><button type="button">Login with Google</button></p>
+      </form>
+    </section>
+
+    <hr>
+
+    <!-- SIGN IN FORM(the second tab) -->
+    <section id="signin" aria-labelledby="signin-heading">
+      <h2 id="signin-heading">Sign in</h2>
+      <p>Enter your email address and password to securely log in to AltSchool Student Portal</p>
+
+      <form action="#" method="post">
+        <p>
+          <label for="signin-email">Email</label><br>
+          <input type="email" id="signin-email" name="email" placeholder="john.doe@example.com" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="signin-password">Password</label><br>
+          <input type="password" id="signin-password" name="password" placeholder="********" autocomplete="current-password" required>
+          <button type="button" id="toggle-signin-password" aria-controls="signin-password" aria-label="Show password">&#128065;</button>
+        </p>
+
+        <p><button type="submit">Proceed to Dashboard &rarr;</button></p>
+
+        <p>Forgot your password? <a href="#reset">Reset Now!</a></p>
+
+        <p>OR</p>
+
+        <p><button type="button">Login with Google</button></p>
+      </form>
+    </section>
+    <hr>
+
+    <section id="reset" aria-labelledby="reset-heading">
+      <h2 id="reset-heading">Reset Password</h2>
+      <p>Placeholder for the password reset page.</p>
+    </section>
+
+    <section id="terms" aria-labelledby="terms-heading">
+      <h2 id="terms-heading">Terms of Use</h2>
+      <p>Placeholder for the Terms of Use.</p>
+    </section>
+
+    <section id="privacy" aria-labelledby="privacy-heading">
+      <h2 id="privacy-heading">Privacy Policy</h2>
+      <p>Placeholder for the Privacy Policy.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>
+      Daodu Opeyemi Isaac<br>
+      7, Salamot close, Iyana-iyesi, Ota, Ogun State, Nigeria<br>
+      <a href="mailto:daodu1035@gmail.com">daodu1035@gmail.com</a>
+    </address>
+    <p><small>&copy; 2026 Daodu Opeyemi Isaac. All rights reserved.</small></p>
+  </footer>
+
+  <script>
+    // Show / hide password (that is, the eye icon)
+    function setupToggle(buttonId, inputId) {
+      const btn = document.getElementById(buttonId);
+      const pwd = document.getElementById(inputId);
+      btn.addEventListener('click', () => {
+        const hidden = pwd.type === 'password';
+        pwd.type = hidden ? 'text' : 'password';
+        btn.setAttribute('aria-label', hidden ? 'Hide password' : 'Show password');
+      });
+    }
+    setupToggle('toggle-signup-password', 'signup-password');
+    setupToggle('toggle-signin-password', 'signin-password');
+  </script>
+</body>
+</html>
